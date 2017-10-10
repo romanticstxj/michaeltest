@@ -1,0 +1,56 @@
+
+Druid_1    10.10.49.101
+Druid_2    10.10.49.102
+Druid_3    10.10.49.103
+Druid_4    10.10.49.104
+账号密码   ： madhouse/madhouse
+--------------------
+http://www.jianshu.com/p/99aa70e937a5 Druid官方文档翻译-集群部署
+
+http://druid.io/docs/0.9.0/ingestion/stream-ingestion.html#server
+
+http://druidio.cn/docs/0.9.0/ingestion/stream-ingestion.html
+
+http://lxw1234.com/archives/2015/11/554.htm 海量数据实时OLAP分析系统-Druid.io安装配置和体验
+
+
+http://druid.io/
+https://imply.io/docs/latest/
+
+http://blog.csdn.net/njpjsoftdev/article/details/52955937 Druid.io系列（三）： Druid集群节点
+
+
+export ZOOKEEPER_HOME=/home/madhouse/zookeeper/zookeeper-3.4.6
+export PATH=$PATH:$ZOOKEEPER_HOME/bin:$ZOOKEEPER_HOME/conf
+
+
+-----------------------------------
+4：启动zookeeper -》sh /home/madhouse/zookeeper/zookeeper-3.4.6/bin/zkServer.sh start
+		mysql ->  用户---》root:Zxd@919759184     druid:Druid@123456
+
+
+3: 安装nodejs ——》curl  https://nodejs.org/dist/v6.9.4/node-v6.9.4-linux-x64.tar.gz -o node-v6.9.4-linux-x64.tar.gz
+		安装 Python ——》http://blog.csdn.net/zyz511919766/article/details/14002497 错误 http://blog.aboutc.net/linux/61/install-python-on-linux
+-----------------------------------------------------------------------
+https://imply.io/docs/latest/cluster.html#configure-deep-storage 集群启动步骤
+
+------------------------------https://imply.io/docs/latest/quickstart-----------------------
+bin/post-index-task --file quickstart/wikiticker-index.json
+------------------------------------------------------------------------
+-----------------------------https://imply.io/docs/latest/cluster.html#configure-deep-storage----------
+/home/madhouse/Druid/imply-2.0.0/bin/supervise -c /home/madhouse/Druid/imply-2.0.0/conf/supervise/master-with-zk.conf
+/home/madhouse/Druid/imply-2.0.0/bin/supervise -c /home/madhouse/Druid/imply-2.0.0/conf/supervise/data.conf
+/home/madhouse/Druid/imply-2.0.0/bin/supervise -c /home/madhouse/Druid/imply-2.0.0/conf/supervise/query.conf
+----------------------------
+----------------------------------------------视图链接
+http://114.80.90.115:29095/
+http://114.80.90.115:28081/#
+http://114.80.90.115:28090/console.html
+-------------------------------------------------
+
+-----------------------------------数据格式配置文件-----------
+http://druid.io/docs/0.9.0/ingestion/batch-ingestion.html 数据格式
+http://druid.io/docs/0.9.0/ingestion/index.html DataSchema格式
+http://druid.io/docs/0.9.0/querying/aggregations.html metricsSpec 聚合列表
+
+
