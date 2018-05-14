@@ -3,4 +3,14 @@
   <groupId>michaeltest</groupId>
   <artifactId>michaeltest</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  
+  <dependencies>
+  	<!-- https://mvnrepository.com/artifact/javax.mail/javax.mail-api -->
+<dependency>
+    <groupId>javax.mail</groupId>
+    <artifactId>javax.mail-api</artifactId>
+    <version>1.6.1</version>
+</dependency>
+  	
+  </dependencies>
 </project>
