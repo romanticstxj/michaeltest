@@ -1,3 +1,4 @@
+package com.java.multithread;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -19,7 +20,7 @@ public class AsyncDemo {
         executor.execute(new Task(latch));
         executor.execute(() -> {
             try {
-            	System.out.println(" caller thread is: " + Thread.currentThread());
+            	System.out.println(" caller thread before latch await complete is: " + Thread.currentThread());
                 latch.await();
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -30,9 +31,9 @@ public class AsyncDemo {
     }
     private static class Task implements Runnable {
         /**
-         * CountDownLatch ÊÇJDKÌá¹©µÄÒ»¸ö¼òµ¥µÄÏß³Ì¼à²â¹¤¾ß
-         * »ùÓÚ¼òµ¥µÄ¼ÆÊý£¬µ÷ÓÃcountDown()·½·¨±íÃ÷µ±Ç°Ïß³ÌÒÑ¾­ÖÕÖ¹
-         * ÔÚ¼à²âÏß³ÌÖÐµ÷ÓÃawait()·½·¨,¸Ã·½·¨»áÒ»Ö±¹ÒÆðÖ±µ½ËùÓÐÆäËüÏß³ÌÖÕÖ¹
+         * CountDownLatch ï¿½ï¿½JDKï¿½á¹©ï¿½ï¿½Ò»ï¿½ï¿½ï¿½òµ¥µï¿½ï¿½ß³Ì¼ï¿½â¹¤ï¿½ï¿½
+         * ï¿½ï¿½ï¿½Ú¼òµ¥µÄ¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½countDown()ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ß³ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½Ö¹
+         * ï¿½Ú¼ï¿½ï¿½ï¿½ß³ï¿½ï¿½Ðµï¿½ï¿½ï¿½await()ï¿½ï¿½ï¿½ï¿½,ï¿½Ã·ï¿½ï¿½ï¿½ï¿½ï¿½Ò»Ö±ï¿½ï¿½ï¿½ï¿½Ö±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß³ï¿½ï¿½ï¿½Ö¹
          */
     	private int j=0;
         private final CountDownLatch latch;
