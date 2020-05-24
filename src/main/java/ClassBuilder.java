@@ -25,8 +25,8 @@ public class ClassBuilder {
 	}
 	
 	public static void main(String[] args){
-//		ClassBuilder cb = new ClassBuilder().setAge(20).setName("michael");
-//		System.out.println(cb);
+		ClassBuilder cb = new ClassBuilder().setAge(20).setName("michael");
+		System.out.println(cb);
 		
 		List<String> list = new ArrayList<String>();
 		list.add("3");
