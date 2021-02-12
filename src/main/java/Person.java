@@ -30,10 +30,10 @@ public class Person {
         this.type = type;
     }
     
-    public Person() {
+    private Person() {
         
     }
-    public Person(Integer type, String name) {
+    private Person(Integer type, String name) {
         super();
         this.type = type;
         this.name = name;
@@ -42,4 +42,17 @@ public class Person {
     public String toString() {
         return "Person [type=" + type + ", name=" + name + "]";
     }
+}
+
+class SubPerson extends Person{
+
+	public SubPerson(Integer type) {
+		super(type);
+		// TODO Auto-generated constructor stub
+	}
+	
+	public void setName(String name) {
+//        this.name = name;
+    }
+    
 }
