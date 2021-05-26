@@ -9,6 +9,7 @@ import java.util.concurrent.locks.ReentrantLock;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.LongStream;
+import java.util.stream.Stream;
 
 import com.google.common.collect.Lists;
 
@@ -22,7 +23,8 @@ public class ConcurrentTest {
 
 	public static void main(String[] args) {
 
-		testConcurrencySecurity();
+//		testConcurrencySecurity();
+		System.out.println(sequentialSum(100));
 	}
 	
 	private static void test1() {
@@ -62,6 +64,12 @@ public class ConcurrentTest {
 	    System.out.println("串行执行的大小：" + list1.size());
 	    System.out.println("并行执行的大小：" + list2.size());
 	    System.out.println("加锁并行执行的大小：" + list3.size());
+	}
+	
+	private static long sequentialSum(long n) {
+		return Stream.iterate(1L, i->i+1)
+				.limit(n)
+				.reduce(0L, Long::sum);
 	}
 
 }

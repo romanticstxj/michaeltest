@@ -1,11 +1,10 @@
 package com.java.streams;
 
 import java.util.Comparator;
+import java.util.IntSummaryStatistics;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
-import java.util.Set;
-import java.util.stream.Collectors;
+import static java.util.stream.Collectors.*;
 
 import com.google.common.collect.Lists;
 
@@ -26,12 +25,22 @@ public class CollectTest {
 //		System.out.println(map3);
 //		
 		
-		Optional<String> min = list.stream().collect(Collectors.minBy(Comparator.comparingInt(String::length)));
+		Optional<String> min = list.stream().collect(minBy(Comparator.comparingInt(String::length)));
 		System.out.println(min);
+		
+		test();
 	}
 	
 	private static void test() {
+		List<Integer> list = Lists.newArrayList(1,2,3,4,5);
+		IntSummaryStatistics stat = list.stream().collect(summarizingInt(x->x));
+		System.out.println(stat);
 		
+		String result = list.stream().map(x -> String.valueOf(x)).collect(joining(", "));
+		System.out.println(result);
+	
+	
+	
 	}
 
 }

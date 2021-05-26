@@ -18,10 +18,20 @@ public class GenericTypeTest {
 		}
 		
 		List<String> list2 = new ArrayList<>();
-		test(list2);
+		//List<Object>是可以容纳所有类型的list，而list2只能容纳String
+//		test(list2);
+//		List<String>.class;
+		Object o = null;
+		if(o instanceof List<?>) {
+			List<?> list3 = (List<?>) o;
+		}
 	}
 	
-	public void test(List<Object> list) {
+	public void test(List<?> list) {
+		list.add(null);
+	}
+	
+	public void test2(List list) {
 		
 	}
 
